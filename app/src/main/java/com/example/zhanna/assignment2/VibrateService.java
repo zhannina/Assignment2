@@ -71,10 +71,6 @@ public class VibrateService extends Service implements SensorEventListener{
         float y = event.values[1];
         float z = event.values[2];
 
-        Log.d("mag",""+x);
-        Log.d("mag",""+y);
-        Log.d("mag",""+z);
-
         float mag_value = (float) Math.sqrt(x*x+y*y+z*z);
         prefs = getApplicationContext().getSharedPreferences(PREFS, Context.MODE_PRIVATE);
         editor = prefs.edit();
@@ -82,7 +78,6 @@ public class VibrateService extends Service implements SensorEventListener{
         editor.putFloat("MAG", mag_value);
         editor.commit();
 
-        Log.d("VAL", mag_value+"");
 
         if (mag_value > 35){
 
@@ -95,6 +90,6 @@ public class VibrateService extends Service implements SensorEventListener{
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
-
+        //do nothing
     }
 }

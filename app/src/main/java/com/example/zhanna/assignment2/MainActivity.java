@@ -28,9 +28,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         edit = (EditText) findViewById(R.id.edit);
-
-
-
         intent = new Intent(this, VibrateService.class);
 
     }
